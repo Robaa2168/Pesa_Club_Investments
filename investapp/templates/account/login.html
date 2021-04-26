@@ -1,0 +1,88 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}
+    Login
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'mailmessenger/emailer.css' %}">
+{% endblock %}
+
+{% block metatags %}
+  <meta name="description" content="The best online shop within Nairobi CBD in Kenya">
+
+  <!-- Primary Meta Tags -->
+  <title>Welcome to Frontier Express!!</title>
+  <meta name="title" content="Welcome to Frontier Express!!">
+  <meta name="description" content="">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://frontierexpress.co.ke/account/login">
+  <meta property="og:title" content="Welcome to Frontier Express!!">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="http://frontierexpress.co.ke/account/login">
+  <meta property="twitter:title" content="Welcome to Frontier Express!!">
+  <meta property="twitter:description" content="">
+  <meta property="twitter:image" content="">
+{% endblock %}
+
+{% block content %}
+    <div class="mailer-form">
+        <div class="mailer-holder">
+            <div class="left">
+                <div class="header">
+                    <h2> Login to your account </h2>
+                </div> 
+            </div>
+            <div class="right">
+                <div class="body">
+                    <form method="post" action="{% url 'login' %}" id="emailer">
+                      {% csrf_token %}
+
+                        <div class="input-holder">
+                            <label>Username</label>
+                            <input type="text" name="username" placeholder="Username">
+                        </div>
+
+                        <div class="input-holder">
+                            <label>Password</label>
+                            <input type="password" name="password" placeholder="Password">
+                        </div>
+
+                        <div class="input-holder">
+                            <button type="submit" name="send" id="send_btn">
+                              Login
+                            </button>
+                        </div>
+                        <div class="forgot-password mails-total text-center">
+                            <a href="{% url 'password_reset' %}">Forgot password?</a>
+                            <a href="{% url 'signup' %}">Don't have an account? Sign up here</a>
+                        </div>
+                    </form>
+                    
+                        {% for message in messages %}
+                            <div class="alert alert-info my-4">
+                                {{ message }}
+                            </div>
+                        {% endfor %}              
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="https://web.facebook.com/Mangoke-100719798561368/?_rdc=1&_rdr"> <img src="https://img.icons8.com/color/48/000000/facebook-circled--v1.png" alt="F"/> </a>
+            <a href="https://ke.linkedin.com/company/mango-ke?trk=public_profile_experience-item_result-card_image-click"> <img src="https://img.icons8.com/color/48/000000/linkedin-2--v2.png" alt="L" /> </a>
+            <a href="https://twitter.com/Mango_hosting"> <img src="https://img.icons8.com/color/48/000000/twitter--v2.png" alt="T"/> </a>
+            <a href="https://www.instagram.com/mango_hosting/"> <img src="https://img.icons8.com/color/48/000000/instagram-new--v2.png" alt="I" /> </a>
+            </div>
+
+     </div>
+
+
+{% endblock %}
