@@ -1,0 +1,216 @@
+
+.mailer-form{
+    width: 100%;
+    height: calc( 100vh - var(--nav-size) );
+    background: url('./../media-files/herobg.jpg'), linear-gradient(45deg, rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.7));
+    background-blend-mode: darken;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 20px;
+    transition: all 0.2s ease;
+  }
+  
+  .mailer-holder{
+    width: 90%;
+    height: 85vh;
+    margin: auto;
+    overflow: hidden;
+    /*background: rgba(255, 255, 255, 1);*/
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    /*box-shadow: 0 0 10px #aaa;*/
+  }
+  
+  .mailer-holder .header{
+    height: var(--nav-size);
+    background: var(--theme-color);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .mailer-holder .header h2{
+    color: white;
+  }
+  
+  .mailer-holder .body{
+    height: calc(100% - var(--nav-size));
+    overflow: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 50px;
+  }
+  
+  .mailer-holder .body form{
+    padding: 10px;
+  }
+  
+  .mailer-holder .body form div{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  
+  .mailer-holder .body form div label{
+    padding: 5px;
+    font-weight: 700;
+    /*color: red;*/
+  }
+  
+  .mailer-holder .body form div textarea, .mailer-holder .body form div select{
+    outline: none;
+    border: none;
+    background: #eee;
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .mailer-holder .body form div select{
+    border-radius: 10px;
+  }
+  
+  .mailer-holder .body form div button{
+    margin: 10px 0;
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    font-size: 20px;
+    background: var(--theme-color);
+    color: white;
+    cursor: pointer;
+  }
+  
+  .mailer-holder .body form div button:hover{
+    background: var(--theme-hover-color);
+  }
+  
+  
+  .mails-result{
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .mail-result{
+    width: 20%;
+    height: 200px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 0 30px #aaa;
+  }
+  
+  .mail-result h3{
+    font-weight: 700;
+    font-size: 22px;
+    margin: 10px 0;
+  }
+  
+  .mail-result .count{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    font-weight: 700;
+    font-size: 28px;
+    align-self: center;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+  
+  .mails-total{
+    background: var(--primary-bg-accent);
+    color: var(--primary-color);
+  }
+  
+  .mails-sent{
+    background: var(--sent-bg);
+    color: var(--sent-color);
+  }
+  
+  .mails-failed{
+    background: var(--failed-bg);
+    color: var(--failed-color);
+  }
+  
+  .email-response{
+    /*width: 100%;*/
+    padding: 20px;
+    transition: all 2s ease;
+  }
+  
+  .email-response .response{
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+    transition: all 1s ease;
+  }
+  
+  
+  .loader{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .loader .outer{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    /*border-bottom: 2px solid var(--theme-color);*/
+    border-top: 5px solid var(--theme-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate 2s linear infinite;
+  }
+  
+  .loader .inner{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border-bottom: 5px solid var(--theme-color);
+    animation: rotar 1.4s linear infinite;
+  }
+  
+  @keyframes rotate{
+    0%{
+      transform: rotate(360deg);
+    }
+    100%{
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes rotar{
+    0%{
+      transform: rotate(-360deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loader-text{
+    font-weight: 700;
+  }
+  
+  .loader-text .text-one{
+    font-size: 20px;
+  }
+  
+  .loader-text .text-two{
+    font-size: 24px;
+  }
