@@ -2,6 +2,8 @@ const usernameField = document.querySelector("#usernameField");
 const feedBackArea = document.querySelector(".invalid_feedback");
 const emailField = document.querySelector("#emailField");
 const emailFeedBackArea = document.querySelector(".emailFeedBackArea");
+const emailFeedBack = document.querySelector(".emailFeedBack");
+const usernameFeedBack = document.querySelector(".usernameFeedBack");
 const passwordField = document.querySelector("#passwordField");
 const usernameSuccessOutput = document.querySelector(".usernameSuccessOutput");
 const showPasswordToggle = document.querySelector(".showPasswordToggle");
@@ -36,8 +38,11 @@ emailField.addEventListener("keyup", (e) => {
           submitBtn.disabled = true;
           emailField.classList.add("is-invalid");
           emailFeedBackArea.style.display = "block";
+          emailFeedBack.style.display = "none";
           emailFeedBackArea.innerHTML = `<p>${data.email_error}</p>`;
         } else {
+          emailFeedBack.style.display = "block";
+          emailFeedBack.innerHTML = `<p>available</p>`;
           submitBtn.removeAttribute("disabled");
         }
       });
@@ -54,7 +59,7 @@ usernameField.addEventListener("keyup", (e) => {
   usernameField.classList.remove("is-invalid");
   feedBackArea.style.display = "none";
 
-  if (usernameVal.length > 0) {
+  if (usernameVal.length > 1) {
     fetch("/validate-username", {
       body: JSON.stringify({ username: usernameVal }),
       method: "POST",
@@ -65,9 +70,12 @@ usernameField.addEventListener("keyup", (e) => {
         if (data.username_error) {
           usernameField.classList.add("is-invalid");
           feedBackArea.style.display = "block";
+          usernameFeedBack.style.display = "none";
           feedBackArea.innerHTML = `<p>${data.username_error}</p>`;
           submitBtn.disabled = true;
         } else {
+          usernameFeedBack.style.display = "block";
+          usernameFeedBack.innerHTML = `<p>available</p>`;
           submitBtn.removeAttribute("disabled");
         }
       });
