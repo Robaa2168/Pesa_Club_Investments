@@ -162,6 +162,11 @@ SITE_ID=1
 
 
 
+#django_heroku.settings(locals())
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
 #SMTP Configuration
 
 # Email configurations remember to install python-decouple
