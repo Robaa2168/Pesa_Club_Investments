@@ -59,7 +59,7 @@
                                     {% csrf_token %}
                           
                                     {% include 'partials/_messages.html' %}
-                                    <div class="input-group mb-3">
+                                    <div class="form-group mb-3">
                                       <label for="userpassword" class="form-label">username</label>
                                       <input
                                         type="text"
@@ -73,7 +73,7 @@
                                     <div class="invalid_feedback invalid-feedback" style="display:none">
                                     </div>
                                     <p class="text-sm text-success usernameSuccessOutput"></p>
-                                    <div class="input-group mb-3">
+                                    <div class="form-group mb-3">
                                       <label for="userpassword" class="form-label">Email</label>
                                       <input
                                         type="email"
@@ -88,7 +88,7 @@
                           
                                     <div class="emailFeedBackArea invalid-feedback" style="display:none">
                                     </div>
-                                        <div class="input-group mb-3">
+                                        <div class="form-group mb-3">
                                             <label for="userpassword" class="form-label">Password</label>
                                             <input
                                             type="password"
@@ -106,7 +106,7 @@
                     
                                         <div class="mt-4 d-grid">
                                             <input type="submit" value="Register"  
-                                             class="btn btn-primary waves-effect waves-light" />
+                                             class="btn btn-primary waves-effect waves-light submit-btn" />
                                              
                                         </div>
 
