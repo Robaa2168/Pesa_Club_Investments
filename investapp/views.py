@@ -1,31 +1,20 @@
-from django.shortcuts import render
-from django.http  import HttpResponse
 
-# Create your views here.
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+from django.views.generic import View, UpdateView
+from .forms import *
+from django.contrib.auth.models import User
 
-def loginPage(request):
-	if request.user.is_authenticated:
-		return redirect('home')
-	else:
-		if request.method == 'POST':
-			username = request.POST.get('username')
-			password =request.POST.get('password')
-
-			user = authenticate(request, username=username, password=password)
-
-			if user is not None:
-				login(request, user)
-				return redirect('home')
-			else:
-				messages.info(request, 'Username OR password is incorrect')
-
-		context = {}
-		return render(request, 'auth-login.html', context)
+from django.contrib import messages
+from django.contrib.sites.shortcuts import get_current_site
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode
+from django.template.loader import render_to_string
+from .tokens import account_activation_token
 
 
 def index(request):
-    return render(request, 'index.html')
+     return render(request, 'index.html')
 
-
-
+# Sign Up View
 
