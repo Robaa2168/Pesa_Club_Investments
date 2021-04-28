@@ -18,6 +18,7 @@ from django.template.loader import render_to_string
 from .utils import account_activation_token
 from django.urls import reverse
 from django.contrib import auth
+from django.contrib import auth
 
 # Create your views here.
 

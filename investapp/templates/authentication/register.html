@@ -8,10 +8,10 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Register | Skote - Admin & Dashboard Template</title>
+        <title>Transparent</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesbrand" name="author" />
+        <meta content="Investments" name="description" />
+        
         <!-- App favicon -->
         <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
 
@@ -24,10 +24,10 @@
 
     </head>
 
-    <body>
+    <body style="background-color: cornsilk;">
         
         <div class="account-pages my-5 pt-sm-5">
-            <div class="container">
+            <div class="container" >
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="card overflow-hidden">
@@ -36,7 +36,7 @@
                                     <div class="col-7">
                                         <div class="text-primary p-4">
                                             <h5 class="text-primary">Free Register</h5>
-                                            <p>Get your free Skote account now.</p>
+                                            <p>Get your free account now.</p>
                                         </div>
                                     </div>
                                     <div class="col-5 align-self-end">
@@ -59,7 +59,8 @@
                                     {% csrf_token %}
                           
                                     {% include 'partials/_messages.html' %}
-                                    <div class="form-group">
+                                    <div class="mb-3">
+                                      <label for="userpassword" class="form-label">username</label>
                                       <input
                                         type="text"
                                         name="username"
@@ -72,7 +73,8 @@
                                     <div class="invalid_feedback invalid-feedback" style="display:none">
                                     </div>
                                     <p class="text-sm text-success usernameSuccessOutput"></p>
-                                    <div class="form-group">
+                                    <div class="mb-3">
+                                      <label for="userpassword" class="form-label">Email</label>
                                       <input
                                         type="email"
                                         name="email"
@@ -131,7 +133,7 @@
                                         </div>
                 
                                         <div class="mt-4 text-center">
-                                            <p class="mb-0">By registering you agree to the Skote <a href="#" class="text-primary">Terms of Use</a></p>
+                                            <p class="mb-0">By registering you agree to our <a href="#" class="text-primary">Terms of Use</a></p>
                                         </div>
                                     </form>
                                 </div>
@@ -142,7 +144,8 @@
                             
                             <div>
                                 <p>Already have an account ? <a href="auth-login.html" class="fw-medium text-primary"> Login</a> </p>
-                                <p>© <script>document.write(new Date().getFullYear())</script> Skote. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+                                <p>© <script>document.write(new Date().getFullYear())</script> 
+                                </p>
                             </div>
                         </div>
 
@@ -151,12 +154,7 @@
             </div>
         </div>
 
-        <!-- JAVASCRIPT -->
-        <script src="{% static 'libs/jquery/jquery.min.js'%}"></script>
-        <script src="{% static 'libs/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
-        <script src="{% static 'libs/metismenu/metisMenu.min.js'%}"></script>
-        <script src="{% static 'libs/simplebar/simplebar.min.js'%}"></script>
-        <script src="{% static 'libs/node-waves/waves.min.js'%}"></script>
+      
         <script src="{% static 'js/register.js' %}"></script>
 
     </body>
