@@ -3,9 +3,6 @@ from django.views import View
 import json
 from django.http import JsonResponse
 from django.contrib.auth.models import User
-import json
-from django.http import JsonResponse
-from django.contrib.auth.models import User
 from validate_email import validate_email
 from django.contrib import messages
 from django.core.mail import EmailMessage
@@ -18,7 +15,7 @@ from django.template.loader import render_to_string
 from .utils import account_activation_token
 from django.urls import reverse
 from django.contrib import auth
-from django.contrib import auth
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -154,7 +151,7 @@ class LoginView(View):
 
 
 class LogoutView(View):
-    def post(self, request):
+    def get(self, request):
         auth.logout(request)
         messages.success(request, 'You have been logged out')
         return redirect('login')
