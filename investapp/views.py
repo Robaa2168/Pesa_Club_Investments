@@ -11,8 +11,10 @@ from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
+#from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
-
+@login_required(login_url='/login')
 def index(request):
      return render(request, 'index.html')
 
